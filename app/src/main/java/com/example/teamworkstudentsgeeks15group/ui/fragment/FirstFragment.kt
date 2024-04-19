@@ -1,16 +1,34 @@
 package com.example.teamworkstudentsgeeks15group.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.teamworkstudentsgeeks15group.R
 import com.example.teamworkstudentsgeeks15group.databinding.FragmentFirstBinding
+import com.example.teamworkstudentsgeeks15group.ui.adapter.StudentAdapter
 
-class FirstFragment : Fragment() {
-
+class FirstFragment : Fragment(R.layout.fragment_first) {
     private val binding by viewBinding(FragmentFirstBinding::bind)
+    private val adapter = StudentAdapter()
+    private val viewModel by viewModels<StudentsViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialize()
+        subscribe()
+    }
+
+    private fun initialize() {
+        binding.rvStudents.adapter = adapter
+    }
+
+    private fun subscribe() {
+        viewModel.arancarLiveData.observe(viewLifecycleOwner) {
+            adapter.setStudents(it)
+            Log.e("tag", "subscribe:${it.toString()} ")
+        }
     }
 }
