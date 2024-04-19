@@ -1,6 +1,15 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+    // Kapt
+    kotlin("kapt")
+
+    // Hilt
+    id("com.google.dagger.hilt.android")
+
+    // Safe args
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -33,6 +42,8 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    // Binding
+    buildFeatures.viewBinding = true
 }
 
 dependencies {
@@ -45,4 +56,24 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Hilt
+    //noinspection UseTomlInstead
+    implementation("com.google.dagger:hilt-android:2.51")
+    //noinspection UseTomlInstead
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
+    //noinspection UseTomlInstead
+    implementation("org.jetbrains:annotations:RELEASE_VERSION")
+
+    // NavGraph
+    val nav_version = "2.7.7"
+    //noinspection UseTomlInstead
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    //noinspection UseTomlInstead
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // Binding property delegate
+    //noinspection UseTomlInstead
+    implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.9")
+    
 }
