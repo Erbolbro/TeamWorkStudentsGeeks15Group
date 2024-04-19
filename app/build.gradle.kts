@@ -2,12 +2,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 
-    // Kapt
-    kotlin("kapt")
-
-    // Hilt
-    id("com.google.dagger.hilt.android")
-
     // Safe args
     id("androidx.navigation.safeargs.kotlin")
 }
@@ -57,14 +51,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // Hilt
-    //noinspection UseTomlInstead
-    implementation("com.google.dagger:hilt-android:2.51")
-    //noinspection UseTomlInstead
-    kapt("com.google.dagger:hilt-android-compiler:2.51")
-    //noinspection UseTomlInstead
-    implementation("org.jetbrains:annotations:RELEASE_VERSION")
-
     // NavGraph
     val nav_version = "2.7.7"
     //noinspection UseTomlInstead
@@ -75,5 +61,5 @@ dependencies {
     // Binding property delegate
     //noinspection UseTomlInstead
     implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.9")
-    
+
 }
