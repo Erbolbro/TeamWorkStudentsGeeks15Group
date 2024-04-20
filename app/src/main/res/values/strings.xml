@@ -6,4 +6,5 @@
     <string name="age">Age</string>
     <string name="discreption">информация</string>
     <string name="add">Добавить</string>
+    <string name="rv_add">Добавить...</string>
 </resources>
