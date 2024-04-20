@@ -34,12 +34,12 @@
         android:id="@+id/addFragment"
         android:name="com.example.teamworkstudentsgeeks15group.ui.fragment.AddFragment"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" >
+        tools:layout="@layout/fragment_add">
         <action
             android:id="@+id/action_addFragment_to_firstFragment2"
+            app:destination="@id/firstFragment"
             app:popUpTo="@id/addFragment"
-            app:popUpToInclusive="true"
-            app:destination="@id/firstFragment" />
+            app:popUpToInclusive="true" />
         <argument
             android:name="edit"
             app:argType="string" />
