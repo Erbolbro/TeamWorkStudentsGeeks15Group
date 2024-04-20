@@ -8,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.teamworkstudentsgeeks15group.R
 import com.example.teamworkstudentsgeeks15group.databinding.FragmentDetailBinding
 
-
 class DetailFragment : Fragment(R.layout.fragment_detail) {
     private val binding by viewBinding(FragmentDetailBinding::bind)
     private val navArgs by navArgs<DetailFragmentArgs>()
@@ -26,6 +25,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         tvName.text = name
         tvAge.text = age
         tvDescription.text = description
-        ivAvatar.setImageResource(image)
+        ivPhoto.setImageResource(image[1])
     }
 }

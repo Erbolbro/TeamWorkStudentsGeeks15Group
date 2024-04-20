@@ -20,10 +20,11 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         goToFirstFragment()
     }
 
-    private fun goToFirstFragment() = with(binding){
-        btnAdd.setOnClickListener{
+    private fun goToFirstFragment() = with(binding) {
+        btnAdd.setOnClickListener {
             val description = etAdd.text.toString()
-            val studentsModel = StudentsModel(R.drawable.erbol,"","",description)
+            val studentsModel =
+                StudentsModel(listOf(R.drawable.geeks, R.drawable.geeks), "информация", "", description)
             viewModel.addData(studentsModel)
             findNavController().navigate(R.id.action_addFragment_to_firstFragment2)
         }
