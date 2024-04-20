@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.teamworkstudentsgeeks15group.R
 import com.example.teamworkstudentsgeeks15group.data.model.StudentsModel
@@ -17,7 +19,7 @@ class FirstFragment : Fragment(R.layout.fragment_first), OnItemClick {
     private val binding by viewBinding(FragmentFirstBinding::bind)
     private val adapter = StudentAdapter(this)
 
-    private val viewModel by viewModels<StudentsViewModel>()
+    private val viewModel by activityViewModels<StudentsViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,7 +35,7 @@ class FirstFragment : Fragment(R.layout.fragment_first), OnItemClick {
     private fun subscribe() {
         viewModel.arancarLiveData.observe(viewLifecycleOwner) {
             adapter.setStudents(it)
-            Log.e("tag", "subscribe:$it ")
+            Log.e("tag", "subscribe:$it")
         }
     }
 
@@ -49,7 +51,5 @@ class FirstFragment : Fragment(R.layout.fragment_first), OnItemClick {
                 studentsModel
             )
         )
-
     }
-
 }
