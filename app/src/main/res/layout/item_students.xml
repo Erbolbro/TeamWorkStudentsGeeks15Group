@@ -16,7 +16,9 @@
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" />
+        android:orientation="vertical" >
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/et_name"
@@ -28,6 +30,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/et_age"
         android:layout_width="match_parent"
