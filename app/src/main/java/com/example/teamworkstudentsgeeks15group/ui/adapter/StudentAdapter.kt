@@ -6,18 +6,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.teamworkstudentsgeeks15group.data.model.StudentsModel
 import com.example.teamworkstudentsgeeks15group.databinding.ItemStudentsBinding
 
-class StudentAdapter : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
+class StudentAdapter(val onClick: OnItemClick) :
+    RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     var _studentList = mutableListOf<StudentsModel>()
 
     fun setStudents(studentList: MutableList<StudentsModel>) {
-
         _studentList = studentList
         notifyDataSetChanged()
     }
 
     inner class StudentViewHolder(private val binding: ItemStudentsBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                onClick.onClick(_studentList[adapterPosition])
+            }
+        }
+
         fun bind(model: StudentsModel) {
             binding.etName.text = model.name
             binding.etAge.text = model.age.toString()

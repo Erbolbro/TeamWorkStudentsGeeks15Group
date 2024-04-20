@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.FirstFragment">
+    tools:context=".ui.fragment.FirstFragment"
+    android:gravity="center">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_students"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_students" />
