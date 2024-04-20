@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class StudentsModel(
     @DrawableRes
-    val photo: Int,
+    val photo: List<Int>,
     val name: String,
     val age: String,
     val description: String,

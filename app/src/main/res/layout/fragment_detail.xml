@@ -7,7 +7,7 @@
     tools:context=".ui.fragment.DetailFragment">
 
     <ImageView
-        android:id="@+id/iv_avatar"
+        android:id="@+id/iv_photo"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:scaleType="centerCrop"
@@ -40,7 +40,5 @@
             android:layout_marginStart="10dp"
             android:text="description"
             android:textSize="40sp" />
-
     </ScrollView>
-
 </LinearLayout>

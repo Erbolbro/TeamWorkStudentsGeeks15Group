@@ -19,8 +19,8 @@ class StudentsViewModel : ViewModel() {
         _studentLiveData.value = studentsRepository.studentsModel
     }
 
-    fun addData(studentsModel: StudentsModel){
+    fun addData(studentsModel: StudentsModel) {
         studentsRepository.addData(studentsModel)
-        _studentLiveData.value =studentsRepository.studentsModel
+        _studentLiveData.value = studentsRepository.studentsModel
     }
 }
