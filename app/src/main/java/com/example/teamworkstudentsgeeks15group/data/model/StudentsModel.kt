@@ -8,6 +8,6 @@ data class StudentsModel(
     @DrawableRes
     val photo: Int,
     val name: String,
-    val age: Int,
+    val age: String,
     val description:String,
 ):Parcelable

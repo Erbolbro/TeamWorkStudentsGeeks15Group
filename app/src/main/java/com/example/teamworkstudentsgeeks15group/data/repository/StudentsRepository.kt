@@ -12,10 +12,10 @@ class StudentsRepository {
     }
 
     private fun imageGeeks() {
-        studentsModel.add(StudentsModel(R.drawable.erbol, "Erbol", 18,""))
-        studentsModel.add(StudentsModel(R.drawable.erzhan, "Erzhan", 10,""))
-        studentsModel.add(StudentsModel(R.drawable.leila, "Leila", 18,""))
-        studentsModel.add(StudentsModel(R.drawable.kuttuubai, "Kuttuubai", 15,"Меня зовут Куттуубай. Я андроид разработчик. Лучше всего я разбираюсь в xml"))
-        studentsModel.add(StudentsModel(R.drawable.ilyas, "Ilyas", 19,""))
+        studentsModel.add(StudentsModel(R.drawable.erbol, "Erbol", "18 лет",""))
+        studentsModel.add(StudentsModel(R.drawable.erzhan, "Erzhan", "10 лет",""))
+        studentsModel.add(StudentsModel(R.drawable.leila, "Leila", "18 лет",""))
+        studentsModel.add(StudentsModel(R.drawable.kuttuubai, "Kuttuubai", "15 лет","Меня зовут Куттуубай. Я андроид разработчик. Лучше всего я разбираюсь в xml"))
+        studentsModel.add(StudentsModel(R.drawable.ilyas, "Ilyas", "19 лет",""))
     }
 }
