@@ -25,7 +25,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             val description = etAdd.text.toString()
             val studentsModel = StudentsModel(R.drawable.erbol,"","",description)
             viewModel.addData(studentsModel)
-            findNavController().navigate(R.id.firstFragment)
+            findNavController().navigate(R.id.action_addFragment_to_firstFragment2)
         }
     }
 }
