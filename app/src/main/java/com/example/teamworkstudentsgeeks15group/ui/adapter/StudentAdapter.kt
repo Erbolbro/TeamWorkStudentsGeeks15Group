@@ -26,8 +26,7 @@ class StudentAdapter(val onClick: OnItemClick) :
 
         fun bind(model: StudentsModel) {
             binding.etName.text = model.name
-            binding.etAge.text = model.age.toString()
-            binding.ivPhoto.setImageResource(model.photo)
+            binding.ivPhoto.setImageResource(model.photo[0])
         }
     }
 

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.teamworkstudentsgeeks15group.R
@@ -17,12 +17,13 @@ class FirstFragment : Fragment(R.layout.fragment_first), OnItemClick {
     private val binding by viewBinding(FragmentFirstBinding::bind)
     private val adapter = StudentAdapter(this)
 
-    private val viewModel by viewModels<StudentsViewModel>()
+    private val viewModel by activityViewModels<StudentsViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
         subscribe()
+        toAddFragmentButton()
     }
 
     private fun initialize() {
@@ -32,13 +33,21 @@ class FirstFragment : Fragment(R.layout.fragment_first), OnItemClick {
     private fun subscribe() {
         viewModel.arancarLiveData.observe(viewLifecycleOwner) {
             adapter.setStudents(it)
-            Log.e("tag", "subscribe:${it.toString()} ")
+            Log.e("tag", "subscribe:$it")
+        }
+    }
+
+    private fun toAddFragmentButton() = with(binding) {
+        addButton.setOnClickListener {
+            findNavController().navigate(R.id.action_firstFragment_to_addFragment)
         }
     }
 
     override fun onClick(studentsModel: StudentsModel) {
-            findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToDetailFragment(studentsModel))
-
-        }
-
+        findNavController().navigate(
+            FirstFragmentDirections.actionFirstFragmentToDetailFragment(
+                studentsModel
+            )
+        )
+    }
 }
